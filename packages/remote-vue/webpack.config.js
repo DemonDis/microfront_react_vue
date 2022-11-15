@@ -49,7 +49,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "remote_vue",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        host: 'host@http://localhost:8080/remoteEntry.js'
+      },
       exposes: {
         './ButtonVue': './src/bootstrap'
       },

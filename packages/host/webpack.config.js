@@ -9,6 +9,9 @@ module.exports = {
 
   resolve: {
     extensions: [".tsx", ".ts", ".jsx", ".js", ".json"],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
 
   devServer: {
@@ -16,7 +19,7 @@ module.exports = {
     historyApiFallback: true,
     headers: {"Access-Control-Allow-Origin": "*"},
   },
-
+  
   module: {
     rules: [
       {
@@ -47,7 +50,10 @@ module.exports = {
       remotes: {
         remote_vue: 'remote_vue@http://localhost:8081/remoteEntry.js'
       },
-      exposes: {},
+
+      exposes: {
+        '/ButtonReact': './src/components/ButtonReact/bootstrap.js'
+      },
       shared: {
         ...deps,
         react: {
