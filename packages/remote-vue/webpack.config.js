@@ -2,6 +2,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { VueLoaderPlugin } = require("vue-loader");
 
+const webpack = require('webpack')
+
 module.exports = {
   output: {
     publicPath: "http://localhost:8081/",
@@ -45,6 +47,10 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false,
+    }),
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
       name: "remote_vue",

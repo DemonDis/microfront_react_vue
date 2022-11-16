@@ -19,6 +19,10 @@ module.exports = {
     historyApiFallback: true,
     headers: {"Access-Control-Allow-Origin": "*"},
   },
+
+  optimization: {
+    runtimeChunk: 'single'
+  },
   
   module: {
     rules: [

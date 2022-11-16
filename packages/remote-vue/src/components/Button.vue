@@ -1,5 +1,4 @@
 <script>
-// import { mount } from "host/ButtonReact";
 export default {
   data() {
     return {
@@ -7,25 +6,15 @@ export default {
     }
   },
   props: {
-    disabled: Boolean,
-    nameBtn: String
+    action: Function,
+    nameBtn: String,
+    count: Number
   }
-  // mounted() {
-  //   const { onParentNavigate } = mount(document.getElementById("react"), {
-  //     initialPath: this.initialPath,
-    
-  //     onSignIn: () => {
-  //       console.log("signin");
-  //     },
-  //   });
-  //   this.onParentNavigate = onParentNavigate;
-  // },
 }
 </script>
 
 <template>
-  <div id="react"></div>
-  <button>
-    VUE {{nameBtn}} !!!
+  <button @click="action">
+    VUE {{nameBtn}} - {{count}}!!!
   </button>
 </template>
