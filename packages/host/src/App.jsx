@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { hot } from 'react-hot-loader/root';
-import ButtonVue from './components/ButtonVue'
+
 import "./index.css";
+
+const VueBtnComponent = lazy(() => import('./components/ButtonVue'));
 
 const App=() => {
   const [count, setCount] = useState(0)
   return (
         <div>
-          <ButtonVue nameBtn={'(Vue -> React)'} count={count} action={() => setCount(count + 1)}/>
+          <Suspense fallback={<div>LOAD...</div>}>
+            <VueBtnComponent 
+              nameBtn={'VUE BTN'}
+              count={count} action={() => setCount(count + 1)}
+            />
+          </Suspense>
         </div>
   );
 };

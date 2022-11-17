@@ -7,13 +7,14 @@ import React, { useRef, useEffect } from 'react';
 
   useEffect(() => {
     mount(ref.current);
-    ref.current.__vue_app__._instance.props.nameBtn = nameBtn
-    console.log('BUTTONVUE REACT')
+    console.log('BUTTON VUE in REACT mount', ref.current)
   }, []);
 
   useEffect(() => {
-    ref.current.__vue_app__._instance.props.action = action
-    ref.current.__vue_app__._instance.props.count = count
+    ref.current._vnode.component.props.action = action
+    ref.current._vnode.component.props.count = count
+    ref.current._vnode.component.props.nameBtn = nameBtn
+    console.log('BUTTON VUE in REACT click', ref.current)
   }, [action]);
 
   return <div ref={ref} />;

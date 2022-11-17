@@ -1,8 +1,21 @@
+<script>
+// import ButtonReact from './components/ButtonReact/bootstrap'
+export default {
+  components: {
+    // ButtonReact
+  },
+  data() {
+    return {
+      nameBtn: 'VUE',
+    }
+  },
+}
+</script>
+
+
 <template>
   <div class="container">
     <div>Name: remote-vue</div>
-    <div>Framework: vue3</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
+    <!-- <ButtonReact /> -->
   </div>
 </template>

@@ -2,7 +2,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 const deps = require("./package.json").dependencies;
-module.exports = {
+module.exports =  {
+  mode: 'development',
   output: {
     publicPath: "http://localhost:8080/",
   },
@@ -20,9 +21,9 @@ module.exports = {
     headers: {"Access-Control-Allow-Origin": "*"},
   },
 
-  optimization: {
-    runtimeChunk: 'single'
-  },
+  // optimization: {
+  //   runtimeChunk: 'single'
+  // },
   
   module: {
     rules: [

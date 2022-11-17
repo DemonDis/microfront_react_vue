@@ -4,7 +4,8 @@ const { VueLoaderPlugin } = require("vue-loader");
 
 const webpack = require('webpack')
 
-module.exports = {
+module.exports =  {
+  mode: 'development',
   output: {
     publicPath: "http://localhost:8081/",
   },
@@ -19,6 +20,10 @@ module.exports = {
     headers: {"Access-Control-Allow-Origin": "*"},
   },
 
+  // optimization: {
+  //   runtimeChunk: 'single'
+  // },
+  
   module: {
     rules: [
       {
@@ -48,7 +53,7 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: false,
+      __VUE_OPTIONS_API__: true,
       __VUE_PROD_DEVTOOLS__: false,
     }),
     new VueLoaderPlugin(),
@@ -59,7 +64,7 @@ module.exports = {
         host: 'host@http://localhost:8080/remoteEntry.js'
       },
       exposes: {
-        './ButtonVue': './src/bootstrap'
+        './ButtonVue': './src/components/ButtonVue/bootstrap.js'
       },
       shared: require("./package.json").dependencies,
     }),
