@@ -1,8 +1,8 @@
 <script>
-// import ButtonReact from './components/ButtonReact/bootstrap'
+import ButtonReact from './components/ButtonReact/index.vue'
 export default {
   components: {
-    // ButtonReact
+    ButtonReact
   },
   data() {
     return {
@@ -16,6 +16,6 @@ export default {
 <template>
   <div class="container">
     <div>Name: remote-vue</div>
-    <!-- <ButtonReact /> -->
+    <ButtonReact />
   </div>
 </template>

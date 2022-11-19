@@ -1,12 +1,11 @@
 import React from "react";
-import { hot } from 'react-hot-loader/root';
 
 const ButtonReact = ({nameBtn}) => {
     return(
-        <button>
+        <button onClick={() => console.log('REACT BTN')}>
             REACT - {nameBtn}
         </button>
     )
 }
 
-export default hot(ButtonReact);
+export default ButtonReact

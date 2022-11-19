@@ -3,7 +3,7 @@ import { hot } from 'react-hot-loader/root';
 
 import "./index.css";
 
-const VueBtnComponent = lazy(() => import('./components/ButtonVue'));
+const VueBtnComponent = lazy(() => import('./components/ButtonVue/ButtonVue'));
 
 const App=() => {
   const [count, setCount] = useState(0)

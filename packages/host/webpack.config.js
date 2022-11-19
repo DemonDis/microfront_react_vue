@@ -57,7 +57,7 @@ module.exports =  {
       },
 
       exposes: {
-        '/ButtonReact': './src/components/ButtonReact/bootstrap.js'
+        './ButtonReact': './src/components/ButtonReact/bootstrap.js'
       },
       shared: {
         ...deps,
