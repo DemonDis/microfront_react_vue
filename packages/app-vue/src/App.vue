@@ -15,7 +15,7 @@ export default {
 
 <template>
   <div class="container">
-    <div>Name: remote-vue</div>
+    <div>Name: app-vue</div>
     <ButtonReact />
   </div>
 </template>

@@ -58,10 +58,10 @@ module.exports =  {
     }),
     new VueLoaderPlugin(),
     new ModuleFederationPlugin({
-      name: "remote_vue",
+      name: "app_vue",
       filename: "remoteEntry.js",
       remotes: {
-        host: 'host@http://localhost:8080/remoteEntry.js'
+        app_react: 'app_react@http://localhost:8080/remoteEntry.js'
       },
       exposes: {
         './ButtonVue': './src/components/ButtonVue/bootstrap.js'

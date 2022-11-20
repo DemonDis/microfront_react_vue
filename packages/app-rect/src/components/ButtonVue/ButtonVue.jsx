@@ -1,4 +1,4 @@
-import { mount } from 'remote_vue/ButtonVue';
+import { mount } from 'app_vue/ButtonVue';
 import { hot } from 'react-hot-loader/root';
 import React, { useRef, useEffect } from 'react';
 

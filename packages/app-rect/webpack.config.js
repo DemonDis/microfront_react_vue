@@ -50,10 +50,10 @@ module.exports =  {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "host",
+      name: "app_react",
       filename: "remoteEntry.js",
       remotes: {
-        remote_vue: 'remote_vue@http://localhost:8081/remoteEntry.js'
+        app_vue: 'app_vue@http://localhost:8081/remoteEntry.js'
       },
 
       exposes: {
